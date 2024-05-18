@@ -20,9 +20,25 @@ public static class Priority {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Add the following Queue: Peter 4, Jon 2, Ethan 1
+        // Expected Result: [Peter (Pri:4), Jon (Pri:2), Ethan (Pri:1)
         Console.WriteLine("Test 1");
+
+        var test1Queue = new PriorityQueue();
+        test1Queue.Enqueue("Peter",4);
+        test1Queue.Enqueue("Jon",2);
+        test1Queue.Enqueue("Ethan",1);
+
+        Console.WriteLine(test1Queue.ToString());
+
+        if (test1Queue.ToString() == "[Peter (Pri:4), Jon (Pri:2), Ethan (Pri:1)]")
+        {
+            Console.WriteLine("Test 1 Passed");
+        }
+        else
+        {
+            Console.WriteLine("Test 1 Failed");
+        }
 
         // Defect(s) Found: 
 
@@ -30,10 +46,29 @@ public static class Priority {
 
         // Test 2
         // Scenario: 
-        // Expected Result: 
+        // Expected Result: Remove Jon
         Console.WriteLine("Test 2");
 
-        // Defect(s) Found: 
+        var test2Queue = new PriorityQueue();
+        test2Queue.Enqueue("Peter", 4);
+        test2Queue.Enqueue("Jon", 6);
+        test2Queue.Enqueue("Ethan", 5);
+
+        var removedItem = test2Queue.Dequeue();
+
+        Console.WriteLine("Person Removed was " + removedItem);
+        Console.WriteLine(test2Queue.ToString());
+
+        if (removedItem == "Jon")
+        {
+            Console.WriteLine("Test 2 Passed");
+        }
+        else
+        {
+            Console.WriteLine("Test 2 failed.");
+        }
+
+        // Defect(s) Found: It says that Jon is removed but still is shown.
 
         Console.WriteLine("---------");
 

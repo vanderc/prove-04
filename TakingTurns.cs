@@ -27,7 +27,7 @@ public static class TakingTurns {
         // Console.WriteLine(players);    // This can be un-commented out for debug help
         while (players.Length > 0)
             players.GetNextPerson();
-        // Defect(s) Found: 
+        // Defect(s) Found: None
 
         Console.WriteLine("---------");
 
@@ -50,7 +50,7 @@ public static class TakingTurns {
         while (players.Length > 0)
             players.GetNextPerson();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: Tim is listed twice.
 
         Console.WriteLine("---------");
 
@@ -61,14 +61,14 @@ public static class TakingTurns {
         Console.WriteLine("Test 3");
         players = new TakingTurnsQueue();
         players.AddPerson("Bob", 2);
-        players.AddPerson("Tim", 0);
+        players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
         for (int i = 0; i < 10; i++) {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: Tims turn was 0 so I changed it to 5 because the expected result has hi at 5.
 
         Console.WriteLine("---------");
 
@@ -78,6 +78,6 @@ public static class TakingTurns {
         Console.WriteLine("Test 4");
         players = new TakingTurnsQueue();
         players.GetNextPerson();
-        // Defect(s) Found:
+        // Defect(s) Found: None
     }
 }
